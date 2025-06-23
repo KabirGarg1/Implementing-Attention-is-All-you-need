@@ -81,7 +81,7 @@ class MultiheadAttention(nn.Module):
         if dropout is not None:
             attention_scores = dropout(attention_scores)
         
-        return (attention_scores @ value),attention_scores
+        return (attention_scores @ value),attention_scores #attention_score here will be used for visualization purposes only..not anything with model
 
     def forward(self,q,k,v,mask):
         query = self.W_q(q)
